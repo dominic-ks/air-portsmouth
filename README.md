@@ -31,6 +31,10 @@ We plan to gather data from:
 
 ## Our Hardware
 
+We're building our own sensors to fill in the gaps — to capture air quality data from the places people actually live, travel, and spend time. Existing monitoring stations provide valuable information, but they’re few and far between.
+
+We will show our device designs and code here, so that anyone can build their own sensors. But, we will be creating a number of sensors ourselves, and could be open to taking donations to fund devices and also looking for people to contribute by hosting a sensor in their home or business.
+
 ### Sensors Used To Date
 
 Our current prototype devices use affordable, readily available sensors. These allow us to collect indicative air quality data and experiment with different measurement techniques.
@@ -96,6 +100,40 @@ Power is currently supplied via mains electricity, using flat USB cables through
 
 ---
 
+## Mobile Device Development — Battery Powered with GPS & Mobile Data
+
+In addition to our static air quality monitors, we are also exploring the development of a mobile, battery-powered device capable of tracking air quality along a route — for example, while cycling, walking, or running.
+
+The goal is to capture location tracked air quality data that can be demonstrated using a map interface, similar to existing cycling or running apps. This would allow users to see their exposure to air pollution for a paticular activity or the time of day, as well as potentially contributing to our wider dataset.
+
+This could provide individuals with a more personalised view of their exposure to air pollution during their day-to-day travel and activity.
+
+### Hardware Overview
+
+This mobile device is based on components already used in our existing devices, but adds battery management, GPS tracking, and mobile data connectivity:
+
+| Component | Purpose | Notes |
+|-----------|---------|-------|
+| Raspberry Pi Zero 2 W | Core device | Low-power Linux platform with Wi-Fi for config & debugging. |
+| Li-ion Battery HAT for Pi | Battery power management | Allows the device to run untethered from mains. Paired with 18650 cells. |
+| Waveshare GSM/GPRS/GNSS HAT | GPS tracking & mobile data | Provides location data and connectivity via SIM card (2G/3G). |
+| Existing Sensors | Air quality monitoring | Including PMS5003, MICS6814, MQ-135 — as used in our static devices. |
+
+---
+
+### Current Challenges
+
+Battery life is the main technical challenge for this device:
+
+- Early tests with different 18650 Li-ion cells have shown limited battery life — further testing is required with higher capacity cells and optimised firmware.
+- Power consumption is currently high due to continuous sensor activity, mobile data transmission, and GPS polling.
+  
+Additionally, the current device setup does not yet support:
+- Simultaneous use of the GPS feed and mobile data connection from the Waveshare HAT — this requires firmware development and serial port management to handle shared resources.
+- Firmware updating or robust error handling for mobile data dropouts or GPS signal loss.
+
+---
+
 ## Firmware
 
 _This section will document the firmware running on our devices._
@@ -104,8 +142,8 @@ Details to include:
 - Microcontroller platform (Raspberry Pi Pico)
 - Sensor integration code
 - Communication protocols (e.g. USB Serial, MQTT, REST)
-- OTA update support (if implemented)
-- Power-saving strategies (if battery-powered devices are developed)
+- Update mechanisms
+- Power-saving strategies
 
 _(Details to be added.)_
 
@@ -141,6 +179,7 @@ Resources for building DIY sensors or learning more:
 This is an open-source project — contributions welcome.
 
 Whether you want to help with:
+- Building or hosting a sensor
 - Data visualisation
 - Backend development
 - Hardware testing

@@ -1,0 +1,30 @@
+device:
+  name: "Prototype Device 1"
+  raspberry_pi_zero_w: true
+  raspberry_pi_pico: true
+  wifi: true
+  power: "Mains USB"
+sensors:
+  PMS5003:
+    present: true
+    rpi0w_firmware_integration: true
+    pico_firmware_integration: true
+    backend_integration: true
+  MICS6814:
+    present: true
+    rpi0w_firmware_integration: true
+    pico_firmware_integration: true
+    backend_integration: true
+  MQ-135:
+    present: true
+    rpi0w_firmware_integration: true
+    pico_firmware_integration: true
+    backend_integration: true
+  DHT22:
+    present: false
+    rpi0w_firmware_integration: false
+    pico_firmware_integration: false
+    backend_integration: true
+notes:
+  - "Firmware integration refers to IOT Firmware on RPi Zero W."
+  - "To use the MICS6814 sensor, the Pico must be flashed with the relevant Pimoroni build. See: https://learn.pimoroni.com/article/getting-started-with-pico"

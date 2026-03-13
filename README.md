@@ -78,8 +78,8 @@ These professional-grade sensors offer excellent accuracy but are likely cost-pr
 
 Our current devices use:
 
-- A **Raspberry Pi Zero W** for network connectivity (Wi-Fi) and data handling.
-- A **Raspberry Pi Pico** (or similar microcontroller) to interface with the sensors and handle readings — particularly useful for analog sensors and UART conflicts.
+- A **Raspberry Pi Zero W** for network connectivity (Wi-Fi) and data handling. Firmware available at [iot-nest-firmware](https://github.com/dominic-ks/iot-nest-firmware).
+- A **Raspberry Pi Pico** (or similar microcontroller) to interface with the sensors and handle readings — particularly useful for analog sensors and UART conflicts. Software available at [iot-pico-enviro](https://github.com/dominic-ks/iot-pico-enviro).
 
 This setup provides flexibility:
 - The Pi Zero manages communication with the backend and remote control.

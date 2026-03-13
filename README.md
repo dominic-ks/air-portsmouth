@@ -1,4 +1,6 @@
-# Portsmouth Open Air Quality Project
+<img src="assets/images/logos/air-portsmouth-logo.png" alt="Air Portsmouth Logo" width="300">
+
+## Portsmouth Open Air Quality Project
 
 A project to collect, combine, and present air quality data for Portsmouth in a way that is accessible, understandable, and useful to everyone.
 
